@@ -9,11 +9,6 @@
   <version>1.0-SNAPSHOT</version>
   <name>day5-ajax</name>
   <packaging>war</packaging>
-    <parent>
-        <groupId>com.mth</groupId>
-        <artifactId>day5-ajax</artifactId>
-        <version> 1.0-SNAPSHOT</version>
-    </parent>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -72,6 +67,7 @@
             <artifactId>jakarta.servlet.jsp-api</artifactId>
             <version>3.0.0</version>
         </dependency>
+
     </dependencies>
 
   <build>

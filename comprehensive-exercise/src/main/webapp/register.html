@@ -19,6 +19,8 @@
             <h1>REGISTER</h1>
             <div class="values">
                 <input id="username" name="username" type="username" placeholder="USERNAME" />
+                <img src="/img/yes.png" style="display: none" id="yes">
+                <img src="/img/no.png" style="display: none" id="no">
                 <input id="password" name="password" type="password" placeholder="PASSWORD" />
                 <input type="text" id="verifyCode"   name="inputCode" placeholder="验证码">
                 <img id="verifyCodeImg" src="/verifyCode" alt="验证码">
@@ -35,6 +37,40 @@
 </div>
 
 <script>
+    let yes = document.getElementById("yes");
+    let no = document.getElementById("no");
+
+    document.getElementById("username").onblur = function () {
+        const username = this.value;
+        //1.创建核心对象
+        let xHttp;
+        if (window.XMLHttpRequest) {
+            xHttp = new XMLHttpRequest();
+        } else {
+            // for IE6
+            xHttp = new ActiveXObject("Microsoft.XMLHTTP")
+        }
+        //2.发送请求
+        xHttp.open("GET","http://localhost:80/check?username=" + username);
+        xHttp.send();
+
+        //3.获取响应
+        xHttp.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                // alert(this.responseText);
+                //判断返回结果
+                if (this.responseText === "true") {
+                    //用户名已存在，显示提示信息\
+                    yes.style.display = "inline";
+                    no.style.display = "none";
+                } else {
+                    yes.style.display = "none";
+                    no.style.display = "inline";
+                }
+            }
+
+        }
+    };
     document.getElementById("changeImg").onclick = function () {
         document.getElementById("verifyCodeImg").src = "/verifyCode?" + new Date().getMilliseconds();
         return false;

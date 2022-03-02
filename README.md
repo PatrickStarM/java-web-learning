@@ -33,3 +33,9 @@
 - 掌握Session的使用
 - 用户登录注册综合案例
 
+## day5-ajax
+
+- 能够使用原生的Ajax请求
+- 能够使用axios发送Ajax请求
+- 熟悉JSON格式，并能使用Fastjson完成Java对象和JSON串的相互转换
+- 使用axios+json完成综合案例

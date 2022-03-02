@@ -1,0 +1,174 @@
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-stretch: normal;
+    src: url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0B4gaVc.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-stretch: normal;
+    src: url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4gaVc.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-stretch: normal;
+    src: url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4gaVc.ttf) format('truetype');
+}
+::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    color: #666666;
+}
+:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #666666;
+    opacity: 1;
+}
+::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #909;
+    opacity: 1;
+}
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #666666;
+}
+body {
+    background-color: #E3E4E7;
+    margin: 0px;
+}
+.back {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    margin-top: -60px;
+}
+.back .ball-1 {
+    content: "";
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background-color: #CB68D2;
+    position: absolute;
+    right: -50px;
+    bottom: -100px;
+}
+.back .ball-2 {
+    content: "";
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: #03B8AB;
+    position: absolute;
+    right: 400px;
+    bottom: 10px;
+}
+.back .ball-3 {
+    content: "";
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #FDB500;
+    position: absolute;
+    left: 500px;
+    top: 10px;
+}
+.back .ball-4 {
+    content: "";
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-color: #F66C5F;
+    position: absolute;
+    left: 200px;
+    top: 50px;
+}
+.container-login {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #FFFFFF;
+    color: #666666;
+    width: 600px;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 60px;
+    position: relative;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.26);
+    animation: show 1.5s;
+}
+.container-login .content {
+    padding: 20px 50px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.container-login .content h1 {
+    font-weight: 400;
+    text-align: left;
+}
+.container-login .content .values {
+    width: 100%;
+    margin-bottom: 60px;
+    margin-top: 20px;
+}
+.container-login .content .values input {
+    font-family: 'Open Sans', sans-serif;
+    clear: both;
+    display: block;
+    width: 100%;
+    margin: 20px 0px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #E8E9EC;
+    color: #666666;
+}
+
+.container-login .content a {
+    text-decoration: none;
+    color: #666666;
+}
+.container-login .footer input {
+    cursor: pointer;
+}
+.container-login .footer .register {
+    border: none;
+    background-color: #E8E9EC;
+    font-family: 'Open Sans', sans-serif;
+    text-align: left;
+    width: 50%;
+    padding: 20px;
+    border-radius: 0px 0px 5px 0px;
+}
+.container-login .footer .register:focus {
+    outline: none;
+    background-color: #D0D0D2;
+}
+.container-login .footer .sing-in {
+    border: none;
+    background-color: #2D3B55;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    text-align: right;
+    width: 50%;
+    padding: 20px;
+    float: right;
+    border-radius: 0px 0px 5px 0px;
+}
+.container-login .footer .sing-in:focus {
+    outline: none;
+    background-color: #273144;
+}
+@keyframes show {
+    0% {
+        transform: perspective(5000px) translateZ(-900px) rotate3d(0.9, 0, 0, -90deg) scale(1);
+    }
+    85% {
+        transform: perspective(5000px) translateZ(0px) rotate3d(0.9, 0, 0, 0deg) scale(1.05);
+    }
+    100% {
+        transform: perspective(5000px) translateZ(0px) rotate3d(0.9, 0, 0, 0deg) scale(1);
+    }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+    <link href="css/login-regist.css" rel="stylesheet">
+</head>
+<body>
+<div class="back">
+    <div class="ball-1"></div>
+    <div class="ball-2"></div>
+    <div class="ball-4"></div>
+    <div class="ball-3"></div>
+</div>
+
+<div class="container-login">
+    <form id="reg-form" action="/register" method="post">
+        <div class="content">
+            <h1>REGISTER</h1>
+            <div class="values">
+                <input id="username" name="username" type="username" placeholder="USERNAME" />
+                <input id="password" name="password" type="password" placeholder="PASSWORD" />
+                <input type="text" id="verifyCode"   name="inputCode" placeholder="验证码">
+                <img id="verifyCodeImg" src="/verifyCode" alt="验证码">
+                <a href="#" id="changeImg">看不清？</a>
+            </div>
+
+            <a href="#">FORGOT YOUR PASSWORD</a>
+        </div>
+        <div class="footer">
+            <input type="submit" value="REGISTER" class="register" />
+            <input type="button" value="SING IN" class="sing-in" onclick="location='/login.html'"/>
+        </div>
+    </form>
+</div>
+
+<script>
+    document.getElementById("changeImg").onclick = function () {
+        document.getElementById("verifyCodeImg").src = "/verifyCode?" + new Date().getMilliseconds();
+        return false;
+    }
+</script>
+</body>
+</html>

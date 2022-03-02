@@ -64,10 +64,8 @@ public class LoginServlet extends HttpServlet {
 
         }else {
             //登录失败
-            request.setAttribute("msg", "用户名或密码错误");
-            //转发
-            request.getRequestDispatcher("/result.jsp").forward(request, response);
-
+            response.setContentType("text/html;charset=utf-8");
+            response.getWriter().write("<script>alert('用户名或密码错误');location='/login.html';</script>");
         }
     }
 }

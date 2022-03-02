@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax请求示例起步--原生的JS异步请求</title>
+</head>
+<body>
+<h1>下方是服务器端返回的数据</h1>
+<hr>
+<h2 id = "info"></h2>
+<input type="button" id="btn" value="点击">
+<script>
+    let btn = document.getElementById("btn")
+    btn.onclick = function btnfun() {
+
+    //1.创建核心对象
+    let xHttp;
+    if (window.XMLHttpRequest) {
+        xHttp = new XMLHttpRequest();
+    } else {
+        // for IE6
+        xHttp = new ActiveXObject("Microsoft.XMLHTTP")
+    }
+    //2.发送请求
+    xHttp.open("GET","http://localhost:80/ajaxServlet");
+    xHttp.send();
+
+    //3.获取响应
+
+    xHttp.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+            //4.回调函数
+            document.getElementById("info").innerHTML = this.responseText;
+        }
+    };
+    };
+
+
+
+</script>
+</body>
+</html>

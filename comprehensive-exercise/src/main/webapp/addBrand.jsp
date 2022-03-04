@@ -8,19 +8,19 @@
     <meta charset="UTF-8">
     <title>添加品牌</title>
     <link href="css/login-regist.css" rel="stylesheet">
-    <style>
-        table {
-            border: 1px solid #ccc;
-        }
-        table td {
-            border: none;
-            padding: 10px;
-        }
-    </style>
 </head>
 <body>
-<h1>添加品牌</h1>
+<div class="back">
+    <div class="ball-1"></div>
+    <div class="ball-2"></div>
+    <div class="ball-3"></div>
+    <div class="ball-4"></div>
+</div>
+    <div class="container-login">
+
 <div class="container">
+    <div class="values">
+        <h2>添加品牌</h2>
     <form action="${pageContext.request.contextPath}/addBrand" method="post">
         <table>
             <tr>
@@ -79,10 +79,13 @@
 
         </table>
 
-        <div style="padding-left: 20px;">
+        <div >
             <input type="submit" value="提交">
         </div>
     </form>
 </div>
+</div>
+    </div>
+
 </body>
 </html>

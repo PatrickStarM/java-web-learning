@@ -7,16 +7,25 @@
 <head>
   <meta charset="UTF-8">
   <title>品牌主页</title>
-  <link href="css/form.css" rel="stylesheet">
+  <link href="css/login-regist.css" rel="stylesheet">
 </head>
 <body>
+<div class="back">
+  <div class="ball-1"></div>
+  <div class="ball-2"></div>
+  <div class="ball-3"></div>
+  <div class="ball-4"></div>
+</div>
+<div class="container-login">
 <%
   User user = (User) request.getSession().getAttribute("user");
   List<Brand> brands = (List<Brand>) request.getAttribute("brands");
 %>
-<h1><%=user.getUsername()%>,欢迎您</h1>
+
 
 <div class="container">
+  <div class="values">
+    <h2><%=user.getUsername()%>,欢迎您</h2>
   <input type="button" value="新增" id="add">
   <hr>
   <table>
@@ -66,6 +75,8 @@
       }
     %>
   </table>
+  </div>
+</div>
 </div>
 
 

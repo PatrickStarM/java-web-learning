@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>异步请求，添加品牌</title>
+    <link rel="stylesheet" href="./css/login-regist.css">
+</head>
+<body>
+<div class="back">
+    <div class="ball-1"></div>
+    <div class="ball-2"></div>
+    <div class="ball-3"></div>
+    <div class="ball-4"></div>
+</div>
+<div class="container-login">
+    <div class="content">
+        <div class="values">
+            <h2>异步请求，添加品牌</h2>
+            <table>
+                <tr>
+                    <td>
+                        <label for="brandName">品牌名称</label>
+                    </td>
+                    <td><input type="text" name="brandName" id="brandName"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="companyName">企业名称</label>
+                    </td>
+                    <td><input type="text" name="companyName" id="companyName"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="ordered">排序</label>
+                    </td>
+                    <td><input type="text" name="ordered" id="ordered"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="description">描述信息</label>
+                    </td>
+                    <td><textarea name="description" id="description" cols="50" rows="10"></textarea></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>状态</label>
+                    </td>
+                    <td><input type="radio" name="status" id="ok" value="1" checked>启用
+                        <input type="radio" name="status" id="no" value="0">禁用
+                    </td>
+                </tr>
+            </table>
+            <div>
+                <input type="button" name="btn" id="btn" value="提交">
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./javascript/axios.min.js"></script>
+<script>
+    //1.给按钮绑定单击事件
+    document.getElementById("btn").onclick = function () {
+        //2.自定义表单数据对象
+        let formData = {
+            brandName: "",
+            companyName: "",
+            ordered: "",
+            description: "",
+            status: ""
+        };
+        //3.获取表单输入的数据，并设置给formData
+        formData.brandName = document.getElementById("brandName").value;
+        formData.companyName = document.getElementById("companyName").value;
+        formData.ordered = document.getElementById("ordered").value;
+        formData.description = document.getElementById("description").value;
+        //4.获取所有的单选按钮,遍历找到被选中的
+        let status = document.getElementsByName("status");
+        for (let i = 0; i < status.length; i++) {
+            if (status[i].checked) {
+                formData.status = status[i].value;
+            }
+        }
+        console.log(formData);
+        //5。发送ajax请求
+        axios({
+            method: "post",
+            url: "http://localhost/newBrand",
+            data: formData
+        }).then(function (response) {
+            //判断响应数据是否为success
+            if (response.data === "success") {
+                //跳转到品牌列表页，重新请求书记
+                location.href = "http://localhost/brand.html";
+            }
+        });
+
+    };
+</script>
+
+</body>
+</html>

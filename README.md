@@ -39,3 +39,21 @@
 - 能够使用axios发送Ajax请求
 - 熟悉JSON格式，并能使用Fastjson完成Java对象和JSON串的相互转换
 - 使用axios+json完成综合案例
+
+## day6-filter-listener
+
+- 理解并掌握如何编写一个Filter(过滤器)
+- 理解并掌握Filter的各项配置
+- 理解并完成登录验证案例和过滤敏感词汇案例
+- 理解并掌握动态代理增强某个方法
+- 理解并掌握ServletContextListener监听器
+- 了解Session监听和Request监听
+- 综合案例
+
+## 案例练习
+
+- book-online 在线书店练习
+- quickstart quickstart
+- comprehensive-exercise 用户-品牌综合练习
+- ajax-exercise ajax练习
+- brand-case 品牌案例综合练习

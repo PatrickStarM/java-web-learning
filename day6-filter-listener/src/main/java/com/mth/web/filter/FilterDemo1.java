@@ -12,7 +12,7 @@ import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 
-@WebFilter(urlPatterns = "/*")
+//@WebFilter(urlPatterns = "/*")
 public class FilterDemo1 implements Filter {
     @Override
     public void init(FilterConfig config) throws ServletException {
@@ -21,7 +21,14 @@ public class FilterDemo1 implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
-        System.out.println("过滤器1被执行");
+        System.out.println("1111");
+        //放行
+        chain.doFilter(request,response);
+        System.out.println("3333");
+        response.setContentType("text/html;charset=utf-8");
+
+
+        
     }
     @Override
     public void destroy() {
